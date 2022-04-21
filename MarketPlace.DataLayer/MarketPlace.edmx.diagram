@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="71fce13a18db4ece8e17886d27512ab2" Name="Diagram1">
+        <EntityTypeShape EntityType="MarketPlaceModel.sysdiagram" Width="1.5" PointX="7.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketPlaceModel.tblCategory" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketPlaceModel.tblCredential" Width="1.5" PointX="1.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketPlaceModel.tblDepartment" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketPlaceModel.tblManufacturer" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketPlaceModel.tblProduct" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketPlaceModel.tblProperty" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketPlaceModel.tblSubCategory" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketPlaceModel.tblTechSpecFilter" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketPlaceModel.tblTypeFilter" Width="1.5" PointX="8.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketPlaceModel.tblUser" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="MarketPlaceModel.FK__tblSubCat__Categ__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="MarketPlaceModel.FK__tblUser__Credent__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="MarketPlaceModel.FK__tblDepart__Manuf__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="MarketPlaceModel.FK__tblManufa__User___29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="MarketPlaceModel.FK__tblProduc__Manuf__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="MarketPlaceModel.FK__tblProduc__SubCa__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="MarketPlaceModel.FK__tblTechSp__Prope__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="MarketPlaceModel.FK__tblTypeFi__Prope__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="MarketPlaceModel.FK__tblTechSp__SubCa__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="MarketPlaceModel.FK__tblTypeFi__SubCa__3A81B327" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
