@@ -1,4 +1,5 @@
-﻿using Marketplace.DataLayer;
+﻿using MarketPlace.DataLayer;
+using MarketPlace.RepoLayer;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,24 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/// <summary>
-/// Summary description for Class1
-/// </summary>
-public class MarketPlace.RepoLayer.Repositorys
+namespace MarketPlace.RepoLayer.Repositorys
 {
-	public ManufacturerRepository : GenericRepository<Manufacturer>, IManufacturerRepository
-	{
-		//
-		// TODO: Add constructor logic here
-		//
-		public ManufacturerRepository(MarketPlaceEntities marketPlaceEntities): base(marketplaceEntities)
-		{
-
-		}
-
-		public TestDBEntities TestDBEntities
-		{
-		get { return Context as marketplaceEntities; }
-		}
-	}
+    public class ManufacturerRepository : GenericRepository<tblManufacturer>, IManufacturerRepository
+    {
+        public ManufacturerRepository(DbContext context) : base(context)
+        {
+        }
+    }
 }

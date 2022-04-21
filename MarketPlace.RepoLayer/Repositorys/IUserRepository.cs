@@ -1,4 +1,4 @@
-﻿using Marketplace.DataLayer;
+﻿using MarketPlace.DataLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 /// <summary>
 /// Summary description for Class1
 /// </summary>
-public class MarketPlace.RepoLayer.Repositorys
+namespace MarketPlace.RepoLayer.Repositorys
 {
-	public IUserRepository : IGenericRepository<User>()
+	public interface IUserRepository
 	{
 		//
 		// TODO: Add constructor logic here

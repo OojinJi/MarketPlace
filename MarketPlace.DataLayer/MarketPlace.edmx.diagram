@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="71fce13a18db4ece8e17886d27512ab2" Name="Diagram1">
+      <Diagram DiagramId="6a95a0f2ef9846d0954e141b555f516a" Name="Diagram1">
         <EntityTypeShape EntityType="MarketPlaceModel.sysdiagram" Width="1.5" PointX="7.75" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="MarketPlaceModel.tblCategory" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MarketPlaceModel.tblCredential" Width="1.5" PointX="1.5" PointY="11.75" IsExpanded="true" />

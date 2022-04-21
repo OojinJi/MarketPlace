@@ -52,15 +52,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorys\Category.cs" />
+    <Compile Include="Repositorys\CategoryRepository.cs" />
+    <Compile Include="Repositorys\CredentialRepository.cs" />
+    <Compile Include="Repositorys\DepartmentRepository.cs" />
+    <Compile Include="Repositorys\ICredentialRepository.cs" />
+    <Compile Include="Repositorys\IDepartmentRepository.cs" />
+    <Compile Include="Repositorys\IManufacturerRepository.cs" />
+    <Compile Include="Repositorys\IProductRepository.cs" />
+    <Compile Include="Repositorys\ITechSpecFilterRepository.cs" />
+    <Compile Include="Repositorys\ITypeFilterIRepository.cs" />
+    <Compile Include="Repositorys\IUserRepository.cs" />
+    <Compile Include="Repositorys\ManufacturerRepository.cs" />
+    <Compile Include="Repositorys\ProductRepository.cs" />
+    <Compile Include="Repositorys\TechSpecFilterRepository.cs" />
+    <Compile Include="Repositorys\TypeFilterIRepository.cs" />
+    <Compile Include="Repositorys\UserRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="Repositorys\GenericRepository.cs" />
     <Compile Include="Repositorys\ICategoryRepository.cs" />
     <Compile Include="Repositorys\IGenericRepository.cs" />
     <Compile Include="Repositorys\IPropertyRepository.cs" />
     <Compile Include="Repositorys\ISubCategoryRepository.cs" />
-    <Compile Include="Repositorys\Property.cs" />
-    <Compile Include="Repositorys\SubCategory.cs" />
+    <Compile Include="Repositorys\PropertyRepository.cs" />
+    <Compile Include="Repositorys\SubCategoryRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MarketPlace.DataLayer\MarketPlace.DataLayer.csproj">
-      <Project>{18E99486-28A2-48BD-91F2-B694B65B2756}</Project>
+      <Project>{18e99486-28a2-48bd-91f2-b694b65b2756}</Project>
       <Name>MarketPlace.DataLayer</Name>
     </ProjectReference>
   </ItemGroup>

@@ -65,7 +65,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MarketPlace.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MarketPlaceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarketPlaceDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>MarketPlace.tt</DependentUpon>
     </Compile>
@@ -109,7 +119,22 @@
     <None Include="MarketPlace.edmx.diagram">
       <DependentUpon>MarketPlace.edmx</DependentUpon>
     </None>
+    <None Include="MarketPlaceDataSet.xsc">
+      <DependentUpon>MarketPlaceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MarketPlaceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MarketPlaceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MarketPlaceDataSet.xss">
+      <DependentUpon>MarketPlaceDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
