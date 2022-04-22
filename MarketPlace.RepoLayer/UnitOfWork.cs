@@ -14,14 +14,34 @@ namespace MarketPlace.RepoLayer.Repositorys
         public UnitOfWork(MarketPlaceEntities1 context)
         {
             _context = context;
-            Categories = new Category(_context);
-            Properties = new Property(_context);
-            SubCategories = new SubCategory(_context);
+            Categories = new CategoryRepository(_context);
+            Credentials = new CredentialRepository(_context);
+            Departments = new DepartmentRepository(_context);
+            Manufacturers = new ManufacturerRepository(_context);   
+            Products = new ProductRepository(_context); 
+            Properties = new PropertyRepository(_context);
+            SubCategories = new SubCategoryRepository(_context);
+            TechSpecFilters = new TechSpecFilterRepository(_context);   
+            TypeFilters = new TypeFilterRepository(_context);
+            Users = new UserRepository(_context);   
         }
-        public ICategoryRepository Categories { get; set; } 
-        public IPropertyRepository Properties { get; set; }
-        public ISubCategoryRepository  SubCategories { get; set; }
-        
+        public CategoryRepository Categories { get; set; } 
+        public PropertyRepository Properties { get; set; }
+        public SubCategoryRepository  SubCategories { get; set; }
+        public CredentialRepository Credentials { get; set; }
+
+        public DepartmentRepository Departments {get; set;}
+
+        public ManufacturerRepository Manufacturers {get; set;}
+
+        public ProductRepository Products {get; set;}
+
+        public TechSpecFilterRepository TechSpecFilters {get; set;}
+
+        public TypeFilterRepository TypeFilters { get; set; }
+
+        public UserRepository Users { get; set; }
+
         public int Complete()
         {
             return _context.SaveChanges();

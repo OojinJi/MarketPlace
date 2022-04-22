@@ -1,4 +1,4 @@
-﻿using Marketplace.DataLayer;
+﻿using MarketPlace.DataLayer;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 /// <summary>
 /// Summary description for Class1
 /// </summary>
-public class MarketPlace.RepoLayer.Repositorys
+namespace MarketPlace.RepoLayer.Repositorys
 {
-	public ProductRepository : GenericRepository<Product>, IProductRepository
+	public class ProductRepository : GenericRepository<tblProduct>, IProductRepository
 	{
 		//
 		// TODO: Add constructor logic here
 		//
-		public ProductRepository(MarketPlaceEntities marketPlaceEntities): base(marketplaceEntities)
+		public ProductRepository(MarketPlaceEntities1 marketPlaceEntities): base(marketPlaceEntities)
 		{
 
 		}
 
-		public TestDBEntities TestDBEntities
-		{
-			get { return Context as marketplaceEntities; }
-		}
-	}
+        public IEnumerable<tblProduct> GetManufacturerByName(int Product_ID)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

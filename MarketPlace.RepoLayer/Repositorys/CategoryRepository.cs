@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MarketPlace.RepoLayer.Repositorys
 {
-    public class Category : GenericRepository<Category>, ICategoryRepository
+    public class CategoryRepository : GenericRepository<CategoryRepository>, ICategoryRepository
     {
-        public Category(DbContext context) : base(context)
+        public CategoryRepository(DbContext context) : base(context)
         {
         }
     }

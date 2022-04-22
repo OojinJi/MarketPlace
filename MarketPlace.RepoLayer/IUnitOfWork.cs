@@ -9,9 +9,17 @@ namespace MarketPlace.RepoLayer
 {
     public interface IUnitOfWork:IDisposable
     {
-        ICategoryRepository Categories { get; }
-        IPropertyRepository Properties { get; }
-        ISubCategoryRepository SubCategories { get; }
+        CategoryRepository Categories { get; }
+        CredentialRepository Credentials { get; }
+        DepartmentRepository Departments { get; }
+        ManufacturerRepository Manufacturers { get; }
+        ProductRepository Products { get; }
+        PropertyRepository Properties { get; }
+        SubCategoryRepository SubCategories { get; }
+        TechSpecFilterRepository TechSpecFilters { get; }   
+        TypeFilterRepository TypeFilters { get; }   
+        UserRepository Users { get; }
+
 
         int Complete();
 

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MarketPlace.RepoLayer.Repositorys
 {
-    public class Property : GenericRepository<Property>, IPropertyRepository
+    public class PropertyRepository : GenericRepository<PropertyRepository>, IPropertyRepository
     {
-        public Property(DbContext context) : base(context)
+        public PropertyRepository(MarketPlaceEntities1 marketPlaceEntities) : base(marketPlaceEntities)
         {
         }
 

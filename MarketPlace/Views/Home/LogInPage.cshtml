@@ -1,0 +1,144 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoginPage</title>
+    <style>
+
+body {
+        background-image: url('https://s2.loli.net/2022/03/31/3WMq4TukiZOtS2A.png');
+        background-color: #cccccc;
+}
+
+#login_frame {
+    width: 500px;
+    height: 300px;
+    padding: 13px;
+
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    margin-left: -300px;
+    margin-top: -300px;
+
+    background-color: rgba(240, 255, 255, 0.5);
+
+    border-radius: 10px;
+    text-align: center;
+}
+
+form p > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#image_logo {
+    margin-top: 22px;
+}
+
+.label_input {
+    font-size: 14px;
+
+    width: 65px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+
+    color: white;
+    background-color: #3CD8FF;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.text_field {
+    width: 278px;
+    height: 28px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0;
+}
+
+#btn_signup {
+    font-size: 14px;
+
+
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+
+    color: white;
+    background-color: #3BD9FF;
+    border-radius: 6px;
+    border: 0;
+
+    float: right;
+}
+#btn_login {
+    font-size: 14px;
+
+
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+
+    color: white;
+    background-color: #3BD9FF;
+    border-radius: 6px;
+    border: 0;
+
+    float: center;
+}
+
+#forget_pwd {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    float: right;
+    top: 5px;
+
+}
+
+#forget_pwd:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+#login_control {
+    padding: 13px;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <button id="btn_signup">Sign Up</button>
+        <div id="login_frame">
+            <h1>Buliding Product Selection Platform</h1>
+
+
+            <form method="post" action="">
+
+                <p><label class="label_input">Username </label><input type="text" placeholder="Username or Email" id="username" class="text_field" /></p>
+                <p><label class="label_input">Password </label><input type="text" id="password" placeholder="Password" class="text_field" /></p>
+
+                <div id="login_control">
+                    <button type="submit" id="btn_login">Log in</button>
+                    <a id="forget_pwd" href="https://www.google.com/">Forgot Password</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
