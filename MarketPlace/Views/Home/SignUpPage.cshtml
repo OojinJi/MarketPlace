@@ -1,0 +1,110 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SignupPage</title>
+    <style>
+        body {
+            background-image: url('https://s2.loli.net/2022/03/31/3WMq4TukiZOtS2A.png');
+            background-color: #cccccc;
+        }
+#signup_frame {
+    width: 600px;
+    height: 500px;
+    padding: 13px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+
+    background-color: rgba(240, 255, 255, 0.5);
+
+    border-radius: 10px;
+    text-align: center;
+}
+
+form p > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#image_logo {
+    margin-top: 22px;
+}
+
+.label_input {
+    font-size: 14px;
+
+    width: 120px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+
+    color: white;
+    background-color: #3CD8FF;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.text_field {
+    width: 278px;
+    height: 28px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div id="signup_frame">
+
+        <h2> Register as User</h2>
+
+        <div text-align:center>
+            <label for="file">Image preview:</label>
+            <br />
+            <br />
+            <form action="" enctype="">
+                <input id="file" class="filepath" onchange="changepic(this)" type="file" /><br />
+
+                <img src="" id="show" width="50" />
+            </form>
+
+            <script>
+                    function changepic() {
+                        var reads = new FileReader()
+
+                        f = document.getElementById('file').files[0]
+
+                        reads.readAsDataURL(f)
+
+                        reads.onload = function (e) {
+                            document.getElementById('show').src = this.result
+                        }
+                    }
+            </script>
+            <br />
+
+            <form method="post" action="">
+
+                <p><label class="label_input">Username </label><input type="text" placeholder="Username" class="text_field" /></p>
+                <p><label class="label_input">Email Address </label><input type="text" placeholder="Email" class="text_field" /></p>
+                <p><label class="label_input">Password </label><input type="text" placeholder="password" class="text_field" /></p>
+                <p><label class="label_input">ComfirmPassword </label><input type="text" placeholder="Password" class="text_field" /></p>
+
+                <button>Sign Up</button>
+
+            </form>
+
+        </div>
+</body>
+</html>

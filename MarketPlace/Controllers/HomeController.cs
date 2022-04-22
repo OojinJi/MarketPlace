@@ -26,5 +26,19 @@ namespace MarketPlace.Controllers
 
             return View();
         }
+        [Route("UserLogin/LoginPage")]
+        public ActionResult LogInPage()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        [Route("UserLogin/SignUpPage")]
+        public ActionResult SignUpPage()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
