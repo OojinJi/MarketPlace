@@ -16,10 +16,15 @@ namespace MarketPlace.RepoLayer.Repositorys
 		//
 		// TODO: Add constructor logic here
 		//
-		public UserRepository(MarketPlaceEntities1 marketPlaceEntities): base(marketPlaceEntities)
-		{ 
-			
+		private readonly MarketPlaceEntities1 _marketPlaceEntities1;
+		public UserRepository(MarketPlaceEntities1 marketPlaceEntities1): base(marketPlaceEntities1)
+		{
+			this._marketPlaceEntities1 = marketPlaceEntities1;
 		}
 
-	}
+        public string GetPasswordByUsername(string username)
+        {
+			return _marketPlaceEntities1.tblUsers.Where(u => u.User_Name.ToLower() == username.ToLower()).FirstOrDefault()?.User_Password;
+        }
+    }
 }

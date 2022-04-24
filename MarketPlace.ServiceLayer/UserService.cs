@@ -11,6 +11,8 @@ namespace MarketPlace.ServiceLayer
 {
     public class UserService
     {
+       
+
         public UnitOfWork uow { get; set; }
         public UserService()
         {
@@ -18,7 +20,7 @@ namespace MarketPlace.ServiceLayer
             uow = new UnitOfWork(marketPlaceEntities);
         }
 
-        public IEnumerable<UserDTO> UserInfoByID(int id)
+        public IEnumerable<UserDTO> UserInfoByID(string name, int id)
         {
             var Users = uow.Users.GetAll();
             var Credentials = uow.Credentials.GetAll();

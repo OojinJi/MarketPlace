@@ -12,8 +12,7 @@ namespace MarketPlace.RepoLayer.Repositorys
 {
 	public interface IUserRepository
 	{
-		//
-		// TODO: Add constructor logic here
-		//
+	
+	
 	}
 }
