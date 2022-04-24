@@ -62,32 +62,30 @@ namespace MarketPlace.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult LogInPage(string Name, string password)
+        public ActionResult LogInPage(Models.UserInfoVM model)
         {
-
-
-            var pwd = _uow.Users.GetPasswordByUsername(Name);
-
-            if (string.IsNullOrWhiteSpace(pwd))
+            if (ModelState.IsValid)
             {
+                var pwd = _uow.Users.GetPasswordByUsername(model.Name);
 
-                // TODO: throw error 
-                // response 400 
-                return View("LogInPage");
+                if (string.IsNullOrWhiteSpace(pwd))
+                {
+
+                    return Content("the user is not exist");
 
 
-            }
-            if (pwd == password)
-            {
-                return RedirectToAction("SearchPage");
+                }
+                if (pwd == model.Password)
+                {
+                    return RedirectToAction("Products");
+                }
+               
+                return View();
             }
             else
-            {
-                ModelState.AddModelError("", "invalid User name or Password");
-                return View("LogInPage");
-            }
-
-          
+                ModelState.AddModelError("Login Error", "The entered username or password is incorrect! please enter again.");
+              return View();
+           
 
         }
 
@@ -100,18 +98,18 @@ namespace MarketPlace.Controllers
         }
 
         [HttpPost]
-        public ActionResult SignUpPage(UserInfoVM userInfo)
+        public ActionResult SignUpPage(Models.UserInfoVM model)
         {
             if (ModelState.IsValid)
             {
                 tblUser newUser = new tblUser();
-                newUser.User_Name = userInfo.Name;
-                newUser.User_Password = userInfo.Password;
-                newUser.User_Email = userInfo.Email;
-            
+                newUser.User_Name = model.Name;
+                newUser.User_Password = model.Password;
+                newUser.User_Email = model.Email;
+
                 _uow.Users.Add(newUser);
                 _uow.Complete();
-          
+
 
 
                 return View("Products");
@@ -120,7 +118,8 @@ namespace MarketPlace.Controllers
             {
 
                 //If the validation fails, we are returning the model object with errors to the view, which will display the error messages.
-                return View("LogInPage");
+                ModelState.AddModelError("Signup Error", "The entered username or password is incorrect! please enter again.");
+                return View();
             }
         
         
