@@ -34,8 +34,7 @@ namespace MarketPlace.ServiceLayer
                               Email = u.User_Email,
                               Image = u.User_Image,
                               Password = u.User_Password,
-                              UserType = c.User_Type
-
+                              Credential = c.Credential_ID
                           }).ToList();
             return result;
         }

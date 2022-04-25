@@ -12,7 +12,7 @@ namespace MarketPlace.ServiceLayer.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public byte[] Image { get; set; }   
-        public string Password { get; set; }    
-        public string UserType { get; set; }
-     }
+        public string Password { get; set; }
+        public int Credential { get; set; }
+    }
 }

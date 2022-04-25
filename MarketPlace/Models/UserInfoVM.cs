@@ -20,7 +20,6 @@ namespace MarketPlace.Models
         [EmailAddress]
         public string Email { get; set; }
         public byte[] Image { get; set; }
-     
-        public string UserType { get; set; }
+        public int Credential { get; set; }
     }
 }

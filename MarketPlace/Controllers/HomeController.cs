@@ -106,7 +106,7 @@ namespace MarketPlace.Controllers
                 newUser.User_Name = model.Name;
                 newUser.User_Password = model.Password;
                 newUser.User_Email = model.Email;
-
+                newUser.Credential_ID = 1;
                 _uow.Users.Add(newUser);
                 _uow.Complete();
 
