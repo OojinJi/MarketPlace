@@ -1,4 +1,5 @@
-﻿
+﻿﻿@model MarketPlace.Models.UserInfoVM
+
 @{
     Layout = null;
 }
@@ -8,103 +9,127 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>SignupPage</title>
-    <style>
-        body {
-            background-image: url('https://s2.loli.net/2022/03/31/3WMq4TukiZOtS2A.png');
-            background-color: #cccccc;
-        }
-#signup_frame {
-    width: 600px;
-    height: 500px;
-    padding: 13px;
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -200px;
-    margin-top: -200px;
-
-    background-color: rgba(240, 255, 255, 0.5);
-
-    border-radius: 10px;
-    text-align: center;
-}
-
-form p > * {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-#image_logo {
-    margin-top: 22px;
-}
-
-.label_input {
-    font-size: 14px;
-
-    width: 120px;
-    height: 28px;
-    line-height: 28px;
-    text-align: center;
-
-    color: white;
-    background-color: #3CD8FF;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-.text_field {
-    width: 278px;
-    height: 28px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border: 0;
-}
-
-    </style>
+    <title>SignUpPage</title>
 </head>
+<style>
+    body {
+        background-image: url('https://s2.loli.net/2022/03/31/3WMq4TukiZOtS2A.png');
+        background-color: #cccccc;
+    }
+
+    #signup_frame {
+        width: 600px;
+        height: 500px;
+        padding: 13px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: rgba(240, 255, 255, 0.5);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    form p > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #image_logo {
+        margin-top: 22px;
+    }
+
+    .label_input {
+        font-size: 14px;
+        width: 120px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        color: white;
+        background-color: #3CD8FF;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .text_field {
+        width: 278px;
+        height: 28px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: 0;
+    }
+</style>
+
 <body>
-    <div id="signup_frame">
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
 
-        <h2> Register as User</h2>
 
-        <div text-align:center>
-            <label for="file">Image preview:</label>
-            <br />
-            <br />
-            <form action="" enctype="">
-                <input id="file" class="filepath" onchange="changepic(this)" type="file" /><br />
+    @using (Html.BeginForm("SignUpPage", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
 
-                <img src="" id="show" width="50" />
-            </form>
+    <div class="form-horizontal" id="signup_frame">
+        <h1>Register as User</h1>
+        <hr />
+        <label for="file">Image preview:</label>
+        <br />
+        <br />
+        <form action="" enctype="">
+            <input id="file" class="filepath" onchange="changepic(this)" type="file" /><br />
 
-            <script>
-                    function changepic() {
-                        var reads = new FileReader()
+            <img src="" id="show" width="50" />
+        </form>
 
-                        f = document.getElementById('file').files[0]
+        <script>
+            function changepic() {
+                var reads = new FileReader()
 
-                        reads.readAsDataURL(f)
+                f = document.getElementById('file').files[0]
 
-                        reads.onload = function (e) {
-                            document.getElementById('show').src = this.result
-                        }
-                    }
-            </script>
-            <br />
+                reads.readAsDataURL(f)
 
-            <form method="post" action="">
+                reads.onload = function (e) {
+                    document.getElementById('show').src = this.result
+                }
+            }
+        </script>
+        <br />
 
-                <p><label class="label_input">Username </label><input type="text" placeholder="Username" class="text_field" /></p>
-                <p><label class="label_input">Email Address </label><input type="text" placeholder="Email" class="text_field" /></p>
-                <p><label class="label_input">Password </label><input type="text" placeholder="password" class="text_field" /></p>
-                <p><label class="label_input">ComfirmPassword </label><input type="text" placeholder="Password" class="text_field" /></p>
+        <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-                <button>Sign Up</button>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-            </form>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Sign Up" class="btn btn-default" />
+                </div>
+            </div>
         </div>
+        }
+
 </body>
 </html>

@@ -203,6 +203,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\LogInPage.cshtml" />
     <Content Include="Views\Home\SignUpPage.cshtml" />
+    <Content Include="Views\Home\SearchPage.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\LogInPage1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -224,6 +227,14 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MarketPlace.DataLayer\MarketPlace.DataLayer.csproj">
+      <Project>{18E99486-28A2-48BD-91F2-B694B65B2756}</Project>
+      <Name>MarketPlace.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketPlace.RepoLayer\MarketPlace.RepoLayer.csproj">
+      <Project>{ACC2E99B-0406-415D-B6F1-BDCCD20DD244}</Project>
+      <Name>MarketPlace.RepoLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MarketPlace.ServiceLayer\MarketPlace.ServiceLayer.csproj">
       <Project>{fafb388c-2c0a-4517-ac69-c67e0cbaf59f}</Project>
       <Name>MarketPlace.ServiceLayer</Name>

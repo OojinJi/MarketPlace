@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MarketPlace.RepoLayer.Repositorys
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> :IGenericRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext Context;
         public GenericRepository(DbContext context)
@@ -38,7 +38,7 @@ namespace MarketPlace.RepoLayer.Repositorys
 
         public TEntity GetByID(int id)
         {
-            return Context.Set<TEntity>().Find(id); ;
+            return Context.Set<TEntity>().Find(id); 
         }
 
         public void Remove(TEntity entity)
