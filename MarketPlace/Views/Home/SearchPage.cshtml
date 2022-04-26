@@ -1,4 +1,5 @@
-﻿
+﻿@model MarketPlace.Models.ProductInfoVM
+
 @{
     Layout = null;
 }
@@ -10,9 +11,49 @@
     <meta name="viewport" content="width=device-width" />
     <title>SearchPage</title>
 </head>
+<style>
+    #signup_frame {
+        width: 600px;
+        height: 500px;
+        padding: 13px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: rgba(240, 255, 255, 0.5);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+  
+        body
+
+    {
+        background-image: url('https://s2.loli.net/2022/03/31/3WMq4TukiZOtS2A.png');
+        background-color: #cccccc;
+    }
+   
+
+    #searchbar_style {
+        width: 500px;
+        Font-size: 20px;
+    }
+</style>
+
 <body>
-    <div>
+    <div id="signup_frame">
+        <h1>  <img src="https://www.digitalmarketingcommunity.com/wp-content/uploads/2019/12/SmallBizGenius-logo.png" alt="meme"> </h1>
+        <h2>Search product!</h2>
+        <form action="SearchPage" method="post">
+           
+            <table>
+                <td><input id="searchbar_style" asp-for="SearchTerm">Product Name</td>
+                <td><button class="btn btn-primary" type="submit">Search</button></td>
+            </table>
+        </form>
+
     </div>
+
 </body>
 </html>
-

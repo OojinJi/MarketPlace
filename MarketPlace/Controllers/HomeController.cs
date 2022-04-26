@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
@@ -28,6 +30,7 @@ namespace MarketPlace.Controllers
             config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<ProductDTO, ProductInfoVM>();
+                cfg.CreateMap<ProductInfoVM,ProductDTO>();
                 cfg.CreateMap<UserDTO, UserInfoVM>();
                 cfg.CreateMap<UserInfoVM, UserDTO>();
             });
@@ -64,27 +67,18 @@ namespace MarketPlace.Controllers
         [HttpPost]
         public ActionResult LogInPage(Models.UserInfoVM model)
         {
-            if (ModelState.IsValid)
-            {
+            
                 var pwd = _uow.Users.GetPasswordByUsername(model.Name);
-
-                if (string.IsNullOrWhiteSpace(pwd))
-                {
-
-                    return Content("the user is not exist");
-
-
-                }
-                if (pwd == model.Password)
-                {
-                    return RedirectToAction("Products");
-                }
-               
-                return View();
-            }
-            else
-                ModelState.AddModelError("Login Error", "The entered username or password is incorrect! please enter again.");
-              return View();
+                   if (pwd == model.Password)
+                    {
+                        return View("SearchPage");
+                    }
+                   else
+                    {
+                return Content("The entered username or password is incorrect! please enter again.");
+                   }
+            
+            
            
 
         }
@@ -112,7 +106,7 @@ namespace MarketPlace.Controllers
 
 
 
-                return View("Products");
+                return View("SearchPage");
             }
             else
             {
@@ -125,26 +119,49 @@ namespace MarketPlace.Controllers
         
         }
 
+       
+       
+        public ActionResult SearchPage()
+        {
+           
 
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SearchPage(string ProductName)
+        {
+
+            
+                ProductService productService = new ProductService();
+                var productDetail = productService.ProductInfoByID(ProductName);
+
+
+              List<ProductInfoVM> productList = new List<ProductInfoVM>();
+                foreach (ProductDTO item in productDetail)
+                {
+                ProductInfoVM productInfoVM = new ProductInfoVM();
+
+                /*productInfoVM.ProductName = item.ProductName;
+                productInfoVM.Product_ID=item.Product_ID;
+                productInfoVM.Manufacturer_Name = item.Manufacturer_Name;*/
+
+                productInfoVM = mapper.Map<ProductDTO,ProductInfoVM>(item);
+                productList.Add(productInfoVM);
+                }
+         
+            return View("Products", productList);
+            }    
+           
+            
+        
 
         public ActionResult Products()
         {
 
 
-            var result = _uow.Products.GetAll();
-            List<ProductInfoVM> productList = new List<ProductInfoVM>();
-
-            foreach (var item in result)
-            {
-                ProductInfoVM productVM = new ProductInfoVM();
-                productVM.Product_ID= item.Product_ID;
-                productVM.ProductName= item.Product_Name;
-
-                productList.Add(productVM);
-            }
-
-            return View("Products", productList);
+            return View();
         }
+
 
     }
 }
