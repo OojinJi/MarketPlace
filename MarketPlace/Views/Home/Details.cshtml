@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MarketPlace.Models.ProductInfoVM>
+@{
+    ViewBag.Title = "Details";
+}
+<style>
+
+        body {
+            background-image: url('https://s2.loli.net/2022/03/31/3WMq4TukiZOtS2A.png');
+            background-color: #cccccc;
+        }
+    #signup_frame {
+        width: 800px;
+        height: 100px;
+        padding: 13px;
+        position: absolute;
+        left: 40%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: rgba(240, 255, 255, 0.5);
+        border-radius: 10px;
+        text-align: center;
+    }
+    </style >
+    <h2 > Details</h2 >
+    <table class="table" id="signup_frame" >
+
+    <tr >
+    <th >
+    @Html.DisplayNameFor(model => model.Product_ID)
+    </th >
+    <th >
+    @Html.DisplayNameFor(model => model.Product_Name)
+    </th >
+    <th >
+    @Html.DisplayNameFor(model => model.Manufacturer_Name)
+    </th >
+    <th >
+    @Html.DisplayNameFor(model => model.Model)
+    </th >
+    <th >
+    @Html.DisplayNameFor(model => model.SubCategory_Name)
+    </th >
+    <th >
+    @Html.DisplayNameFor(model => model.Series)
+    </th >
+    <th >
+    @Html.DisplayNameFor(model => model.Product_Image)
+    </th >
+
+    <th >
+    @Html.DisplayNameFor(model => model.Series_Info)
+    </th >
+
+
+    <th > </th >
+
+    </tr >
+    @foreach (var item in Model)
+    {
+ <tr >
+    <td >
+    @Html.DisplayFor(modelItem => item.Product_ID)
+    </td >
+    <td >
+    @Html.DisplayFor(modelItem => item.Product_Name)
+    </td >
+    <td >
+    @Html.DisplayFor(modelItem => item.Manufacturer_Name)
+    </td >
+    <td >
+    @Html.DisplayFor(modelItem => item.Model)
+    </td >
+    <td >
+    @Html.DisplayFor(modelItem => item.SubCategory_Name)
+    </td >
+    <td >
+    @Html.DisplayFor(modelItem => item.Series)
+    </td >
+    <td >
+    @Html.DisplayFor(modelItem => item.Product_Image)
+    </td >
+    <td >
+    @Html.DisplayFor(modelItem => item.Series_Info)
+    </td >
+
+
+    </tr >
+    }
