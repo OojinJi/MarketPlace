@@ -41,7 +41,7 @@ namespace MarketPlace.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            return PartialView("_Layout1");
         }
 
         public ActionResult About()
@@ -165,6 +165,14 @@ namespace MarketPlace.Controllers
 
             return View();
         }
+        public ActionResult Details(int id)
+        {
+            var Product = productService.ProductInfoByID(id);
+            var ProductInfoVMs = mapper.Map<IEnumerable<ProductDTO>, IEnumerable<ProductInfoVM>>(Product);
+            return View("Details", ProductInfoVMs);
+          
+        }
+
 
 
     }
