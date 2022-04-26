@@ -10,7 +10,7 @@ namespace MarketPlace.Models
         public int Product_ID { get; set; }
         public string Manufacturer_Name { get; set; }
         public string SubCategory_Name { get; set; }
-        public string ProductName { get; set; }
+        public string Product_Name { get; set; }
         public byte[] Product_Image { get; set; }
         public string Series { get; set; }
         public string Model { get; set; }
