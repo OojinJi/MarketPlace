@@ -533,7 +533,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MarketPlaceEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MarketPlaceEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="tblCategories" EntityType="Self.tblCategory" />
           <EntitySet Name="tblCredentials" EntityType="Self.tblCredential" />
@@ -591,7 +591,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MarketPlaceModelStoreContainer" CdmEntityContainer="MarketPlaceEntities1">
+        <EntityContainerMapping StorageEntityContainer="MarketPlaceModelStoreContainer" CdmEntityContainer="MarketPlaceEntities2">
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="MarketPlaceModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">

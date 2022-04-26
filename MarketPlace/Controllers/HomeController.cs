@@ -134,7 +134,7 @@ namespace MarketPlace.Controllers
                  string ProductName = frm["Search"];
           
             var Product = productService.ProductInfoByProdectName(ProductName);
-            var ProductInfoVMs = mapper.Map<IEnumerable<ProductDTO>, IEnumerable<ProductInfoVM>>(Product);
+            var ProductInfoVMs = mapper.Map<IEnumerable<ProductDTO>, IEnumerable<ProductInfoVM>> (Product);
             return View("Products", ProductInfoVMs);
 
             /* ProductService productService = new ProductService();
