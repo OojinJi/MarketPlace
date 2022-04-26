@@ -128,29 +128,33 @@ namespace MarketPlace.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SearchPage(string ProductName)
+        public ActionResult SearchPage(FormCollection frm)
         {
 
-            
-                ProductService productService = new ProductService();
-                var productDetail = productService.ProductInfoByID(ProductName);
+                 string ProductName = frm["Search"];
+          
+            var Product = productService.ProductInfoByProdectName(ProductName);
+            var ProductInfoVMs = mapper.Map<IEnumerable<ProductDTO>, IEnumerable<ProductInfoVM>>(Product);
+            return View("Products", ProductInfoVMs);
+
+            /* ProductService productService = new ProductService();
+             var productDetail = productService.ProductInfoByProdectName(ProductName);
 
 
-              List<ProductInfoVM> productList = new List<ProductInfoVM>();
-                foreach (ProductDTO item in productDetail)
-                {
-                ProductInfoVM productInfoVM = new ProductInfoVM();
+             List<ProductInfoVM> productList = new List<ProductInfoVM>();
+             foreach (ProductDTO item in productDetail)
+             {
+             ProductInfoVM productInfoVM = new ProductInfoVM();
 
-                /*productInfoVM.ProductName = item.ProductName;
-                productInfoVM.Product_ID=item.Product_ID;
-                productInfoVM.Manufacturer_Name = item.Manufacturer_Name;*/
+             *//*productInfoVM.ProductName = item.ProductName;
+             productInfoVM.Product_ID=item.Product_ID;
+             productInfoVM.Manufacturer_Name = item.Manufacturer_Name;*//*
 
-                productInfoVM = mapper.Map<ProductDTO,ProductInfoVM>(item);
-                productList.Add(productInfoVM);
-                }
-         
-            return View("Products", productList);
-            }    
+             productInfoVM = mapper.Map<IEnumerable<ProductDTO>, IEnumerable<ProductInfoVM>>(item);
+             productList.Add(productInfoVM);
+             }
+         return View("Products", productList);*/
+        }    
            
             
         
