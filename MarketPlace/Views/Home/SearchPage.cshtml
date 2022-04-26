@@ -45,10 +45,10 @@
     <div id="signup_frame">
         <h1>  <img src="https://www.digitalmarketingcommunity.com/wp-content/uploads/2019/12/SmallBizGenius-logo.png" alt="meme"> </h1>
         <h2>Search product!</h2>
-        <form action="SearchPage" method="post">
+        <form id="frmDetail" action="@Url.Action("SearchPage")" method="post">
            
             <table>
-                <td><input id="searchbar_style" asp-for="SearchTerm">Product Name</td>
+                <td><input id="searchbar_style" name="Search" asp-for="SearchTerm"></td>
                 <td><button class="btn btn-primary" type="submit">Search</button></td>
             </table>
         </form>

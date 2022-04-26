@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MarketPlace.Models
 {
-    public class ProductInfoVM
+    public  class  ProductInfoVM 
     {
         public int Product_ID { get; set; }
         public string Manufacturer_Name { get; set; }
@@ -16,6 +16,6 @@ namespace MarketPlace.Models
         public string Model { get; set; }
         public int Model_Year { get; set; }
         public string Series_Info { get; set; }
-        public bool Featured { get; set; }
+       
     }
 }
