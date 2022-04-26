@@ -17,6 +17,5 @@ namespace MarketPlace.Models
         public int Model_Year { get; set; }
         public string Series_Info { get; set; }
         public bool Featured { get; set; }
-
     }
 }

@@ -18,7 +18,7 @@ namespace MarketPlace.ServiceLayer
             uow = new UnitOfWork(marketPlaceEntities);
         }
 
-        public IEnumerable<ProductDTO> ProductInfoByID(int id)
+        public IEnumerable<ProductDTO> ProductInfoByID(string ProductName)
         {
             var Manufacturers = uow.Manufacturers.GetAll();
             var Sub_Categories = uow.SubCategories.GetAll();
@@ -26,7 +26,7 @@ namespace MarketPlace.ServiceLayer
             var result = (from p in Products
                           join m in Manufacturers on p.Manufacturer_ID equals m.Manufacturer_ID
                           join s in Sub_Categories on p.SubCategory_ID equals s.SubCategory_ID
-                          where p.Product_ID == id
+                          where p.Product_Name == ProductName
                           select new ProductDTO
                           {
                               Product_ID = p.Product_ID,
